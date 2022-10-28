@@ -5,6 +5,6 @@ from rest_framework.decorators import api_view
 
 @api_view(['GET'])
 def get_data(request):
-    data = { "slackUsername": "Horlarmmy", "backend": True, "age": 22, "bio": "Baby" }
+    data = { "slackUsername": "Horlarmmy", "backend": True, "age": 22, "bio": "My name is Alade Toheeb, I am a Backend Developer || Blockchain Developer. I am always willing to learn and collaborate" }
     return Response(data)
 
