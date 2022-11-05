@@ -19,4 +19,5 @@ from api import views
 
 urlpatterns = [
     path('data/', views.get_data, name='data'),
+    path('calculate/', views.calculate, name='calculate'),
 ]
