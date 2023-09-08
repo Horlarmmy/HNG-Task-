@@ -18,7 +18,7 @@ def details(slack_name: str, track: str):
         "current_day": datetime.datetime.now().strftime('%A'),
         "utc_time": datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
         "track": track,
-        "github_file_url": "",
-        "github_repo_url": "",
+        "github_file_url": "https://github.com/Horlarmmy/HNG-Tasks/blob/main/task1/main.py",
+        "github_repo_url": "https://github.com/Horlarmmy/HNG-Tasks/blob/main/task1/",
         "status_code": 200
         }
