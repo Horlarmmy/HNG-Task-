@@ -11,7 +11,7 @@ def hello():
     return {"message":"Welcome!!!"}
 
 
-@app.post("/api")
+@app.get("/api")
 def details(slack_name: str, track: str):
     return {
         "slack_name": slack_name,
