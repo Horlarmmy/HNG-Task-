@@ -43,8 +43,12 @@ def details(person: Person, db: Session = Depends(get_db)):
     return {"id": user.id, "name": user.name}
 
 @app.get("/api/{id}")
-def getUser(db: Session = Depends(get_db)):
-    return {"id": 1, "name": "Alade Toheeb"}
+def getUser(id: int, db: Session = Depends(get_db)):
+    user = db.query(models.User).filter(models.User.id == id).first()
+    if (user):
+        return {"id": user.id, "name": user.name}
+    else:
+        raise HTTPException(status_code=400, detail="User with id {} doesn't exists".format(id))
 
 @app.delete("/api/{id}")
 def delUser():
