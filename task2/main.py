@@ -30,9 +30,9 @@ def hello():
 
 
 @app.post("/api")
-def details(person: Person, db: Session = Depends(get_db)):
+def createUser(person: Person, db: Session = Depends(get_db)):
     if db.query(models.User).filter(models.User.name == person.name).first():
-        raise HTTPException(status_code=400, detail="Username already exists")
+        raise HTTPException(status_code=400, detail="User with the name already exists")
     # create the user
     user = models.User(name=person.name)
     print(user.name)
@@ -55,5 +55,13 @@ def delUser():
     pass
 
 @app.put("/api/{id}")
-def updateUser():
-    return {"id": 1, "name": "Alade Toheeb"}
+def updateUser(person: Person, id: int, db: Session = Depends(get_db)):
+    user = db.query(models.User).filter(models.User.id == id).first()
+    if (user):
+        if db.query(models.User).filter(models.User.name == person.name).first():
+            raise HTTPException(status_code=400, detail="User with the name already exists")
+        setattr(user, 'name', person.name)
+        db.commit()
+        return {"id": user.id, "name": user.name}
+    else:
+        raise HTTPException(status_code=400, detail="User with id {} doesn't exists".format(id))
