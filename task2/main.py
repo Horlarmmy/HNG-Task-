@@ -52,7 +52,13 @@ def getUser(id: int, db: Session = Depends(get_db)):
 
 @app.delete("/api/{id}")
 def delUser():
-    pass
+    user = db.query(models.User).filter(models.User.id == id).first()
+    if (user):
+        setattr(user, 'name', person.name)
+        db.commit()
+        return 
+    else:
+        raise HTTPException(status_code=400, detail="User with id {} doesn't exists".format(id))
 
 @app.put("/api/{id}")
 def updateUser(person: Person, id: int, db: Session = Depends(get_db)):
@@ -65,3 +71,4 @@ def updateUser(person: Person, id: int, db: Session = Depends(get_db)):
         return {"id": user.id, "name": user.name}
     else:
         raise HTTPException(status_code=400, detail="User with id {} doesn't exists".format(id))
+
