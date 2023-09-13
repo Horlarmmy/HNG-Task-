@@ -50,13 +50,12 @@ def getUser(id: int, db: Session = Depends(get_db)):
     else:
         raise HTTPException(status_code=400, detail="User with id {} doesn't exists".format(id))
 
-@app.delete("/api/{id}")
+@app.delete("/api/{id}", status_code=204)
 def delUser(id: int, db: Session = Depends(get_db)):
     user = db.query(models.User).filter(models.User.id == id).first()
     if (user):
         db.delete(user)
         db.commit()
-        return 
     else:
         raise HTTPException(status_code=400, detail="User with id {} doesn't exists".format(id))
 
