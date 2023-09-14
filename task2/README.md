@@ -17,11 +17,11 @@ This documentation provides an overview of a simple REST API built with FastAPI,
     - [Update a Person](#update-a-person)
     - [Delete a Person](#delete-a-person)
   - [Request and Response Formats](#request-and-response-formats)
-  - [Sample Usage](#sample-usage)
-    - [Create a Person](#create-a-person-1)
-    - [Get a Person by ID](#get-a-person-by-id-1)
-    - [Update a Person](#update-a-person-1)
-    - [Delete a Person](#delete-a-person-1)
+  - [Error Handling](#error-handling)
+  - [Testing](#testing)
+  - [UML - Diagram](#uml-diagram)
+  - [License](#license)
+
  
 ## Introduction
 
