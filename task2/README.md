@@ -161,9 +161,6 @@ Content-Type: application/json
 ```
 
 ## Testing
-- Postman was used to test the API. The collection of the test requests can be found here:
-
-    [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/27453333-98cba097-2f3c-4bb6-92bd-99da33f5fd9e?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D27453333-98cba097-2f3c-4bb6-92bd-99da33f5fd9e%26entityType%3Dcollection%26workspaceId%3D377a6ae1-5702-4db6-82b4-c3e7c002ac52)
 
 ## UML Diagram
 
