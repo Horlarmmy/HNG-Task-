@@ -161,7 +161,7 @@ Content-Type: application/json
 ```
 
 ## Testing
-
+A Test of the API can be done here [Docs](https://hng-tasks-nine.vercel.app/docs)
 ## UML Diagram
 
 
